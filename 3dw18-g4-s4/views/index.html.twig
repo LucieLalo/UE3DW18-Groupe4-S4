@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	<div class="row">
+		{% for link in links %}
+			<div class="col-md-4">
+			    <h2><a class="linkTitle" href="{{ path('link', { 'id': link.id }) }}">{{ link.title }}</a></h2>
+			    <p>{{ link.desc }}</p>
+			    <a href="{{ link.url }}" title="" target="_blank">Open ></a>
+			    <em>(by {{ link.user.username }})</em>
+
+			    {% for tag in link.tags %}
+			    	<a href="{{ path('tag', { 'id': tag.id }) }}" title="Filtrer">
+			    		{{ tag.title }}
+			    	</a>
+			    {% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+
+<!--test d'affichages automatiques en fonction du nombre de pages de bonton clickable pour selectionner la pages souhaitée -->
+	<div class="row">
+		<ul class="pagination">
+			{% set i = 1  %}
+			{% for page in liensdespages %}
+				<li><a href="#"><button type="button" class="btn btn-link">{{i}}</button></a></li>
+				{% set i = i+1  %}
+			{% endfor %}
+		</ul>
+
+		<input type="text" id="nombreDePage" value="{{ nbrlienx }}">
+	</div>
+
+	<script>
+	// ce partie avait pour but d'afficher en fonction du lien souhaiter le page correspondante grace au bonton des pages ce qui permettait d'avoir sur la meme page une illusion des differentes pages
+
+
+	</script>
+
+{% endblock %}

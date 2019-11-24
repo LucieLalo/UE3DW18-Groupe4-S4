@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <item>
+            <user>Actualité N°1</user>
+            <lien>Ceci est ma première actualité</lien>
+            <tags>Sat, 07 Sep 2002 00:00:01 GMT</tags>
+            <tags_liens>http://www.example.org/actu1</tags_liens>
+        </item>
+    </channel>
+</rss>
